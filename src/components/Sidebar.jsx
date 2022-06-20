@@ -1,8 +1,18 @@
 import './Sidebar.css';
+import { useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
+import { useCurrencyContext } from '../hooks/useCurrencyContext';
+import CurrencyLabel from './CurrencyLabel';
 
 export default function Sidebar() {
   const { data, isPending, error } = useFetch('https://api.frankfurter.app/currencies');
+  const { dispatch } = useCurrencyContext();
+
+  useEffect(() => {
+    if (data) {
+      dispatch({ type: 'LOAD_CURRENCY_LABELS', payload: data });
+    }
+  }, [data]);
   return (
     <div className="sidebar">
       <div className="sidebar-content">
@@ -10,13 +20,10 @@ export default function Sidebar() {
           <p>Frankfurter Currency Dashboard</p>
         </div>
         <div className="sidebar-spacer"></div>
-        <div className="currency-options">
+        <div className="currency-labels">
           <ul>
-            {data && Object.keys(data).map((currency) => (
-              <div className="currency-option">
-                <li key={currency}>{currency} - {data[currency]}</li>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-              </div>
+            {data && Object.keys(data).map((label) => (
+              <CurrencyLabel key={data[label]} shortLabel={label} fullLabel={data[label]} />
             ))}
           </ul>
           {isPending && <p>Loading data...</p>}

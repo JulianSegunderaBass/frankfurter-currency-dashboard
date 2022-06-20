@@ -1,0 +1,21 @@
+.currency-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 5%;
+  cursor: pointer;
+}
+.currency-label svg {
+  width: 18px;
+  height: 18px;
+  stroke: #000;
+  fill: #000;
+  visibility: hidden;
+}
+.currency-label:hover {
+  background: #fff;
+  color: #000;
+}
+.currency-label:hover svg {
+  visibility: visible;
+}

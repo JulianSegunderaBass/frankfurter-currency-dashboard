@@ -20,34 +20,15 @@
   font-size: 1.6rem;
   padding-top: 3.2rem;
 }
-.currency-options {
+.currency-labels {
   height: 80vh;
   /* background-color: #4c6ef5; */
   font-size: 1.2rem;
   overflow-y: scroll;
 }
-.currency-options ul {
+.currency-labels ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-}
-.currency-option {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4rem 5%;
-  cursor: pointer;
-}
-.currency-option svg {
-  width: 18px;
-  height: 18px;
-  visibility: hidden;
-}
-.currency-option:hover {
-  background: #fff;
-  color: #000;
-}
-.currency-option:hover svg {
-  visibility: visible;
 }

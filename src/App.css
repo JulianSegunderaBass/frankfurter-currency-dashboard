@@ -32,20 +32,7 @@ html {
 }
 .container {
   flex-grow: 1;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 0.4rem;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #fff;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  padding: 3.2rem 2.4rem;
 }
 
 @media (max-width: 500px) {

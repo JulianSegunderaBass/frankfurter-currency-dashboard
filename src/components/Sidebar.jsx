@@ -10,14 +10,14 @@ export default function Sidebar() {
 
   useEffect(() => {
     if (data) {
-      dispatch({ type: 'LOAD_CURRENCY_LABELS', payload: data });
+      dispatch({ type: 'LOAD_CURRENCY_LABELS', payload: Object.keys(data) });
     }
-  }, [data]);
+  }, [data, dispatch]);
   return (
     <div className="sidebar">
       <div className="sidebar-content">
         <div className="site-brand">
-          <p>Frankfurter Currency Dashboard</p>
+          <p className='component-heading'>Frankfurter Currency Dashboard</p>
         </div>
         <div className="sidebar-spacer"></div>
         <div className="currency-labels">

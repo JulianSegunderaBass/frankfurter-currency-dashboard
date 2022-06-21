@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect } from 'react';
+import { createContext, useReducer } from 'react';
 
 export const CurrencyContext = createContext();
 
@@ -16,7 +16,7 @@ export const CurrencyReducer = (state, action) => {
 
 export const CurrencyContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CurrencyReducer, {
-    currencyLabels: null,
+    currencyLabels: [],
     currencyComparator: null,
     comparatorAmount: null,
     chosenCurrencies: []

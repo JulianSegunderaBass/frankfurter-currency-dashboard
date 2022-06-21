@@ -1,0 +1,16 @@
+.comparator-heading {
+  font-size: 3rem;
+  margin-top: 3.2rem;
+  font-weight: 700;
+}
+.comparator-select, .comparator-value {
+  display: inline-block;
+  margin: 0 1.2rem;
+  font-size: 3.2rem;
+  border: none;
+  color: var(--site-accent);
+  border-bottom: 1px solid var(--site-accent);
+}
+.comparator-value {
+  width: 12rem;
+}

@@ -10,6 +10,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     if (data) {
+      dispatch({ type: 'DATA_LOADING' });
       dispatch({ type: 'LOAD_CURRENCY_LABELS', payload: Object.keys(data) });
     }
   }, [data, dispatch]);

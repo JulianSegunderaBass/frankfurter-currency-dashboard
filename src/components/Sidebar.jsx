@@ -28,7 +28,7 @@ export default function Sidebar() {
             ))}
           </ul>
           {isPending && <p>Loading data...</p>}
-          {error && <p className='error'>{error}</p>}
+          {/* {error && <p className='error'>{error}</p>} */}
         </div>
       </div>
     </div>

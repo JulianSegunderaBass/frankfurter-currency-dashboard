@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { useCurrencyContext } from './useCurrencyContext';
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
+
+  const { dispatch } = useCurrencyContext();
 
   useEffect(() => {
     const controller = new AbortController()
@@ -27,6 +30,7 @@ export const useFetch = (url) => {
         } else {
           setIsPending(false)
           setError('Could not fetch the data')
+          dispatch({ type: 'SET_SITE_ERROR', payload: 'Could not fetch the data' });
         }
       }
     }

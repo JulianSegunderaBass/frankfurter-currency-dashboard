@@ -17,6 +17,10 @@ export const CurrencyReducer = (state, action) => {
       return { ...state, chosenCurrencies: state.chosenCurrencies.filter(currency => currency !== action.payload), dataLoading: false }
     case 'CLEAR_CURRENCIES':
       return { ...state, chosenCurrencies: [] }
+    case 'SET_SITE_ERROR':
+      return { ...state, siteError: action.payload }
+    case 'CLEAR_SITE_ERROR':
+      return { ...state, siteError: null }
     default:
       return state;
   }
@@ -28,7 +32,8 @@ export const CurrencyContextProvider = ({ children }) => {
     currencyComparator: null,
     comparatorAmount: 1,
     chosenCurrencies: [],
-    dataLoading: false
+    dataLoading: false,
+    siteError: null
   });
 
   // Dispatch functions

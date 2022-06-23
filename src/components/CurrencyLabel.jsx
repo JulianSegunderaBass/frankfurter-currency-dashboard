@@ -2,11 +2,14 @@ import './CurrencyLabel.css';
 import { useCurrencyContext } from '../hooks/useCurrencyContext';
 
 export default function CurrencyLabel({ shortLabel, fullLabel }) {
-  const { dispatch } = useCurrencyContext();
+  const { dispatch, chosenCurrencies, currencyComparator } = useCurrencyContext();
   
   const handleCurrencyChoice = () => {
-    dispatch({ type: 'ADD_CURRENCY_CHOICE', payload: shortLabel });
-    // console.log(shortLabel);
+    // Prevent user from duplicating currency choice
+    // Prevent user from including same currency comparator in the currency list
+    if (!chosenCurrencies.includes(shortLabel) && currencyComparator !== shortLabel) {
+      dispatch({ type: 'ADD_CURRENCY_CHOICE', payload: shortLabel });
+    }
   }
 
   return (

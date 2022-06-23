@@ -24,6 +24,7 @@ export default function CurrencyComparator() {
         ))}
       </select> 
       to other currencies</p>
+      <p className='tooltip'>Select currencies from the list to compare.</p>
     </div>
   )
 }

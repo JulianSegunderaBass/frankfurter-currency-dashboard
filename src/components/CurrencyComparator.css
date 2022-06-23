@@ -14,3 +14,7 @@
 .comparator-value {
   width: 12rem;
 }
+.tooltip {
+  margin-top: 1.2rem;
+  font-size: 1.6rem;
+}

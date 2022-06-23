@@ -1,0 +1,6 @@
+.currency-card-list {
+  margin-top: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.4rem;
+}

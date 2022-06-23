@@ -1,0 +1,14 @@
+.currency-card {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border: 1px solid var(--site-accent);
+}
+.currency-card p {
+  font-size: 1.8rem;
+}
+.currency-card-label {
+  color: var(--site-accent);
+  font-weight: 700;
+}

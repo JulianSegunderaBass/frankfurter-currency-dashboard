@@ -13,6 +13,8 @@ export const CurrencyReducer = (state, action) => {
       return { ...state, currencyComparator: action.payload.comparator, comparatorAmount: action.payload.value, dataLoading: false }
     case 'ADD_CURRENCY_CHOICE':
       return { ...state, chosenCurrencies: state.chosenCurrencies.concat(action.payload), dataLoading: false }
+    case 'REMOVE_CURRENCY_CHOICE':
+      return { ...state, chosenCurrencies: state.chosenCurrencies.filter(currency => currency !== action.payload), dataLoading: false }
     default:
       return state;
   }
@@ -43,8 +45,13 @@ export const CurrencyContextProvider = ({ children }) => {
     dispatch({ type: 'ADD_CURRENCY_CHOICE', payload: data });
   }
 
+  const removeCurrencyChoice = (data) => {
+    dispatch({ type: 'DATA_LOADING' });
+    dispatch({ type: 'REMOVE_CURRENCY_CHOICE', payload: data });
+  }
+
   return (
-    <CurrencyContext.Provider value={{...state, dispatch, setComparatorChoice, addCurrencyChoice }}>
+    <CurrencyContext.Provider value={{...state, dispatch, setComparatorChoice, addCurrencyChoice, removeCurrencyChoice }}>
       {children}
     </CurrencyContext.Provider>
   )

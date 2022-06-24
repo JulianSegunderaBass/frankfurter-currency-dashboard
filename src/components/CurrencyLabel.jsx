@@ -8,6 +8,7 @@ export default function CurrencyLabel({ shortLabel, fullLabel }) {
     // Prevent user from duplicating currency choice
     // Prevent user from including same currency comparator in the currency list
     if (!chosenCurrencies.includes(shortLabel) && currencyComparator !== shortLabel) {
+      // Limit to 10 currencies at a time
       if (chosenCurrencies.length >= 10) {
         dispatch({ type: 'SET_SITE_ERROR', payload: 'Too many selections: please limit to 10 currencies at a time.' });
       } else {

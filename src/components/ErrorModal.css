@@ -11,16 +11,26 @@
   font-weight: 700;
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   gap: 1.6rem;
+  z-index: 3;
 }
 .error-content,
 .error-modal-close {
   padding: 2.4rem;
 }
 .error-modal-close {
+  font-size: 2.4rem;
   background-color: var(--site-error);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+}
+.error-backdrop {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.4rem);
 }

@@ -13,19 +13,19 @@ code {
 }
 .component-heading {
   font-size: 1.6rem;
-  margin-top: 3.2rem;
+  margin-top: 1.2rem;
   font-weight: 700;
 }
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 0.4rem;
+  width: 0.6rem;
 }
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: var(--site-accent);
 }
 ::-webkit-scrollbar-thumb {
   background: #ced4da;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #868e96;
+  background: #e9ecef;
 }

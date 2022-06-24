@@ -4,8 +4,8 @@ import { useCurrencyContext } from '../hooks/useCurrencyContext';
 
 export default function CurrencyCard({ currency }) {
   const { comparatorAmount, currencyComparator, removeCurrencyChoice } = useCurrencyContext();
-  const { data, isPending, error } = useFetch(`https://api.frankfurter.app/latest?amount=${comparatorAmount}&from=${currencyComparator}&to=${currency}`);
-  // console.log();
+  const { data, isPending } = useFetch(`https://api.frankfurter.app/latest?amount=${comparatorAmount}&from=${currencyComparator}&to=${currency}`);
+  
   return (
     <div className='currency-card'>
       <div className="currency-card-content">

@@ -1,3 +1,6 @@
+.currency-list {
+  padding: 0 2.4rem;
+}
 .currency-card-list {
   margin-top: 3.2rem;
   display: grid;

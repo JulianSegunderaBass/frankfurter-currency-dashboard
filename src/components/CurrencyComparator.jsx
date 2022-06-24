@@ -15,7 +15,7 @@ export default function CurrencyComparator() {
   }, [selectedComparator, comparatorValue]);
 
   return (
-    <div>
+    <div className='currency-comparator'>
       <p className="comparator-heading">Compare 
       <input type="number" className='comparator-value' onChange={(e) => setComparatorValue(e.target.value)} value={comparatorValue} />
       <select className='comparator-select' onChange={(e) => setSelectedComparator(e.target.value)} value={selectedComparator}>

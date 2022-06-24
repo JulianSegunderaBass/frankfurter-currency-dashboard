@@ -1,5 +1,5 @@
 import './Sidebar.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import { useCurrencyContext } from '../hooks/useCurrencyContext';
 import CurrencyLabel from './CurrencyLabel';
@@ -7,6 +7,7 @@ import CurrencyLabel from './CurrencyLabel';
 export default function Sidebar() {
   const { data, isPending } = useFetch('https://api.frankfurter.app/currencies');
   const { dispatch } = useCurrencyContext();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -15,26 +16,30 @@ export default function Sidebar() {
     }
   }, [data, dispatch]);
   return (
-    <div className="sidebar">
-      <div className="sidebar-content">
-        <div className="site-brand">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          <p className='component-heading'>Frankfurter Currency Dashboard</p>
-          <div className="sidebar-spacer"></div>
-        </div>
-        <div className="currency-labels">
-          {isPending && 
-            <div className="lds-ring-container">
-              <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-            </div>
-          }
-          <ul>
-            {data && Object.keys(data).map((label) => (
-              <CurrencyLabel key={data[label]} shortLabel={label} fullLabel={data[label]} />
-            ))}
-          </ul>
+    <div className="sidebar-wrapper">
+      {/* <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)}></div> */}
+      <div className={sidebarOpen ? 'sidebar open' : 'sidebar'}>
+        <div className="sidebar-toggle" onClick={() => setSidebarOpen(prevSidebarOpen => !prevSidebarOpen)}>X</div>
+        <div className="sidebar-content">
+          <div className="site-brand">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <p className='component-heading'>Frankfurter Currency Dashboard</p>
+            <div className="sidebar-spacer"></div>
+          </div>
+          <div className="currency-labels">
+            {isPending && 
+              <div className="lds-ring-container" style={{marginTop: '1.2rem'}}>
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+              </div>
+            }
+            <ul>
+              {data && Object.keys(data).map((label) => (
+                <CurrencyLabel key={data[label]} shortLabel={label} fullLabel={data[label]} />
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

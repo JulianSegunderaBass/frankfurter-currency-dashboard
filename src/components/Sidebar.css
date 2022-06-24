@@ -32,6 +32,9 @@
   list-style: none;
   margin-bottom: 0.4rem;
 }
+.sidebar-toggle {
+  display: none;
+}
 /* Media Queries */
 @media (max-width: 1280px) {
   .sidebar {
@@ -41,5 +44,46 @@
 @media (max-width: 800px) {
   .sidebar {
     width: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .sidebar-wrapper {
+    position: relative;
+  }
+  .sidebar {
+    position: absolute;
+    width: 70vw;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    transform: translate(-100%);
+  }
+  .sidebar.open {
+    transform: translate(0);
+  }
+  /* Sidebar Backdrop for Clicking Outside Sidebar */
+  /* .sidebar-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 3;
+  } */
+  /* Sidebar Toggle Button */
+  .sidebar-toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(98%);
+    background: var(--site-accent);
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    cursor: pointer;
+    z-index: 4;
   }
 }

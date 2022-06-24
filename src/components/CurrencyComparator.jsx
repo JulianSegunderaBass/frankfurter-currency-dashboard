@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useCurrencyContext } from '../hooks/useCurrencyContext';
 
 export default function CurrencyComparator() {
-  const { setComparatorChoice, currencyLabels, chosenCurrencies, currencyComparator, comparatorAmount, dataLoading } = useCurrencyContext();
+  const { setComparatorChoice, currencyLabels, chosenCurrencies } = useCurrencyContext();
   const [comparatorValue, setComparatorValue] = useState(1);
   const [selectedComparator, setSelectedComparator] = useState('AUD');
 

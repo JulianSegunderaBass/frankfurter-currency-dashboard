@@ -2,6 +2,8 @@
   box-shadow: inset 4px 0 1px var(--site-accent);
   font-size: 1.8rem;
   font-weight: 700;
+  /* flex: 1;
+  flex-basis: 50px; */
   display: flex;
   justify-content: space-between;
   gap: 1.6rem;

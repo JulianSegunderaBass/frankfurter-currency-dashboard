@@ -3,9 +3,10 @@
   width: 15vw;
   height: 100vh;
   color: #fff;
+  position: fixed;
 }
 .sidebar-content {
-  position: fixed;
+  /* position: fixed; */
   width: inherit;
 }
 .site-brand {
@@ -24,13 +25,21 @@
 .currency-labels {
   background: var(--light-site-accent);
   height: 70vh;
-  padding: 0.8rem 0;
   font-size: 1.2rem;
   overflow-y: scroll;
 }
 .currency-labels ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+/* Media Queries */
+@media (max-width: 1280px) {
+  .sidebar {
+    width: 20vw;
+  }
+}
+@media (max-width: 800px) {
+  .sidebar {
+    width: 30vw;
+  }
 }

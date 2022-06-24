@@ -25,12 +25,16 @@ export default function Sidebar() {
           <div className="sidebar-spacer"></div>
         </div>
         <div className="currency-labels">
+          {isPending && 
+            <div className="lds-ring-container">
+              <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+          }
           <ul>
             {data && Object.keys(data).map((label) => (
               <CurrencyLabel key={data[label]} shortLabel={label} fullLabel={data[label]} />
             ))}
           </ul>
-          {isPending && <p>Loading data...</p>}
         </div>
       </div>
     </div>

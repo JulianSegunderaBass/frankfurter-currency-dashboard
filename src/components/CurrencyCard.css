@@ -10,6 +10,10 @@
   color: var(--site-accent);
   margin-right: 1.2rem;
 }
+.currency-card-content {
+  display: flex;
+  align-items: center;
+}
 .currency-card-content,
 .currency-card-remove {
   padding: 0.8rem 1.2rem;

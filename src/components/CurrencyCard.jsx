@@ -10,7 +10,11 @@ export default function CurrencyCard({ currency }) {
     <div className='currency-card'>
       <div className="currency-card-content">
         <span className='currency-card-label'>{currency}</span>
-        {isPending && <span>Loading...</span>}
+        {isPending && 
+          <div className="lds-ring-container">
+            <div className="lds-ring lds-ring-small lds-ring-dark"><div></div><div></div><div></div><div></div></div>
+          </div>
+        }
         {data && <span>{Object.values(data.rates)[0]}</span>}
       </div>
       <div className='currency-card-remove' onClick={() => removeCurrencyChoice(currency)}>X</div>

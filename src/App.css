@@ -13,9 +13,8 @@ font-family: 'Lato', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --site-accent: #6741d9;
-  --light-site-accent: #7950f2;
-  --dark-site-accent: #5f3dc4;
+  --site-accent: #1864ab;
+  --light-site-accent: #1971c2;
   --valid-highlight: #40c057;
   --invalid-highlight: #ff922b;
   --site-error: #f03e3e;

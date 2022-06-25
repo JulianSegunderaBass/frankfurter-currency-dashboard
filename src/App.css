@@ -16,6 +16,8 @@ font-family: 'Lato', sans-serif;
   --site-accent: #6741d9;
   --light-site-accent: #7950f2;
   --dark-site-accent: #5f3dc4;
+  --valid-highlight: #40c057;
+  --invalid-highlight: #ff922b;
   --site-error: #f03e3e;
 }
 * {

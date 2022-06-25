@@ -12,6 +12,7 @@
   stroke: #000;
   fill: #000;
   visibility: hidden;
+  transition: all 0.2s;
 }
 .currency-label:hover {
   background: #fff;
@@ -21,8 +22,15 @@
   visibility: visible;
 }
 .currency-label.valid {
-  background: green;
+  background: var(--valid-highlight);
+  color: #fff;
 }
 .currency-label.invalid {
-  background: orange;
+  background: var(--invalid-highlight);
+  color: #fff;
+}
+.currency-label.valid svg,
+.currency-label.invalid svg {
+  stroke: #fff;
+  fill: #fff;
 }

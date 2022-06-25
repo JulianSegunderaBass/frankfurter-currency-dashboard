@@ -19,9 +19,19 @@
   background: #fff;
 }
 .site-brand svg {
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 6.4rem;
+  height: 6.2rem;
   margin-top: 2.4rem;
+  stroke: #fff;
+  fill: #fff;
+  background: transparent;
+  border-radius: 10%;
+  padding: 0.8rem;
+}
+.site-brand svg:hover {
+  background: #fff;
+  stroke: #000;
+  fill: #000;
 }
 .currency-labels {
   background: var(--light-site-accent);
@@ -51,25 +61,32 @@
   .sidebar {
     position: fixed;
     width: 100vw;
-    height: 40vh;
+    height: 45vh;
     z-index: 4;
     bottom: 0;
     left: 0;
     transform: translateY(100%);
   }
   .currency-labels {
-    height: 25vh;
+    height: 30vh;
     font-size: 2rem;
   }
   .sidebar.open {
     transform: translateY(0);
   }
-  .site-brand svg {
-    display: none;
+  .site-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .site-brand svg,
+  .site-brand .component-heading {
+    margin: 0;
   }
   .site-brand .component-heading {
     font-size: 2rem;
-    margin-top: 2.4rem;
   }
   /* Sidebar Toggle Button */
   .sidebar-toggle {
@@ -91,6 +108,11 @@
     animation-duration: 2s;
     animation-name: pulse;
     animation-iteration-count: infinite;
+  }
+}
+@media (max-width: 400px) {
+  .site-brand .component-heading {
+    font-size: 1.6rem;
   }
 }
 /* Animations */

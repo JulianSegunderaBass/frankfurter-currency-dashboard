@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0.4rem 5%;
   cursor: pointer;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 .currency-label svg {
   width: 18px;
@@ -12,7 +12,7 @@
   stroke: #000;
   fill: #000;
   visibility: hidden;
-  transition: all 0.2s;
+  /* transition: all 0.2s; */
 }
 .currency-label:hover {
   background: #fff;

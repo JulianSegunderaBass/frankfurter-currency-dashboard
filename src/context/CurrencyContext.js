@@ -5,8 +5,6 @@ export const CurrencyContext = createContext();
 // Reducer Function
 export const CurrencyReducer = (state, action) => {
   switch (action.type) {
-    case 'DATA_LOADING':
-      return { ...state, dataLoading: true }
     case 'LOAD_CURRENCY_LABELS':
       return { ...state, currencyLabels: action.payload, currencyComparator: action.payload[0], dataLoading: false }
     case 'SET_CURRENCY_COMPARATOR':
@@ -33,7 +31,6 @@ export const CurrencyContextProvider = ({ children }) => {
     comparatorAmount: 1,
     chosenCurrencies: [],
     currencyListLimit: 10,
-    dataLoading: false,
     siteError: null
   });
 
@@ -44,17 +41,14 @@ export const CurrencyContextProvider = ({ children }) => {
   // }
 
   const setComparatorChoice = (comparator, value, adjustedCurrencyList) => {
-    dispatch({ type: 'DATA_LOADING' });
     dispatch({ type: 'SET_CURRENCY_COMPARATOR', payload: {comparator, value, adjustedCurrencyList} });
   }
 
   const addCurrencyChoice = (data) => {
-    dispatch({ type: 'DATA_LOADING' });
     dispatch({ type: 'ADD_CURRENCY_CHOICE', payload: data });
   }
 
   const removeCurrencyChoice = (data) => {
-    dispatch({ type: 'DATA_LOADING' });
     dispatch({ type: 'REMOVE_CURRENCY_CHOICE', payload: data });
   }
 

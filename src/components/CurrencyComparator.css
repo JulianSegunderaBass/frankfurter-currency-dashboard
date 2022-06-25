@@ -17,7 +17,7 @@
   border-bottom: 1px solid var(--site-accent);
 }
 .comparator-value {
-  width: 12rem;
+  width: 16rem;
 }
 .tooltip {
   margin-top: 1.2rem;
@@ -36,6 +36,9 @@
   .comparator-inputs {
     display: block;
     margin: 1.2rem 0;
+  }
+  .comparator-value {
+    width: 60vw;
   }
   .comparator-heading {
     margin-top: 1.6rem;

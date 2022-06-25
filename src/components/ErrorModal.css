@@ -11,8 +11,8 @@
   font-weight: 700;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1.6rem;
+  align-items: stretch;
+  /* gap: 1.6rem; */
   z-index: 3;
 }
 .error-content,
@@ -25,6 +25,9 @@
   color: #fff;
   font-weight: 600;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .error-backdrop {
   z-index: 2;
@@ -33,4 +36,11 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(0.4rem);
+}
+/* Media Queries */
+@media (max-width: 600px) {
+  .error-modal {
+    width: 90%;
+    font-size: 1.8rem;
+  }
 }

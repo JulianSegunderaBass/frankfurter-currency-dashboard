@@ -8,6 +8,9 @@ export default function CurrencyComparator() {
   const [selectedComparator, setSelectedComparator] = useState('AUD');
 
   useEffect(() => {
+    if (comparatorValue < 1) {
+      setComparatorValue(1);
+    }
     let adjustedCurrencyList = chosenCurrencies.filter(currency => currency !== selectedComparator);
     setTimeout(() => {
       setComparatorChoice(selectedComparator, comparatorValue, adjustedCurrencyList);
@@ -16,14 +19,16 @@ export default function CurrencyComparator() {
 
   return (
     <div className='currency-comparator'>
-      <p className="comparator-heading">Compare 
-      <input type="number" className='comparator-value' onChange={(e) => setComparatorValue(e.target.value)} value={comparatorValue} />
-      <select className='comparator-select' onChange={(e) => setSelectedComparator(e.target.value)} value={selectedComparator}>
-        {currencyLabels && currencyLabels.map((label) => (
-          <option key={label} value={label}>{label}</option>
-        ))}
-      </select> 
-      to other currencies</p>
+      <div className="comparator-heading">Compare 
+      <div className='comparator-inputs'>
+        <input type="number" min="1" className='comparator-value' onChange={(e) => setComparatorValue(e.target.value)} value={comparatorValue} />
+        <select className='comparator-select' onChange={(e) => setSelectedComparator(e.target.value)} value={selectedComparator}>
+          {currencyLabels && currencyLabels.map((label) => (
+            <option key={label} value={label}>{label}</option>
+          ))}
+        </select> 
+      </div>
+      to other currencies</div>
       <p className='tooltip'>Select currencies from the list to compare.</p>
     </div>
   )

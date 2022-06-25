@@ -6,9 +6,11 @@
   margin-top: 3.2rem;
   font-weight: 700;
 }
-.comparator-select, .comparator-value {
+.comparator-inputs {
   display: inline-block;
   margin: 0 1.2rem;
+}
+.comparator-select, .comparator-value {
   font-size: 3.2rem;
   border: none;
   color: var(--site-accent);
@@ -20,4 +22,11 @@
 .tooltip {
   margin-top: 1.2rem;
   font-size: 1.6rem;
+}
+/* Media Queries */
+@media (max-width: 600px) {
+  .comparator-inputs {
+    display: block;
+    margin: 1.2rem 0;
+  }
 }

@@ -4,6 +4,7 @@
   align-items: center;
   padding: 0.4rem 5%;
   cursor: pointer;
+  transition: all 0.2s;
 }
 .currency-label svg {
   width: 18px;
@@ -18,4 +19,10 @@
 }
 .currency-label:hover svg {
   visibility: visible;
+}
+.currency-label.valid {
+  background: green;
+}
+.currency-label.invalid {
+  background: orange;
 }

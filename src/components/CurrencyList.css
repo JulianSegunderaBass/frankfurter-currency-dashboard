@@ -3,9 +3,12 @@
 }
 .currency-card-list {
   margin-top: 3.2rem;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
-  grid-gap: 2.4rem;
+  grid-gap: 2.4rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
 }
 .clear-btn {
   margin-top: 2.4rem;

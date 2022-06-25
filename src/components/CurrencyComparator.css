@@ -23,10 +23,21 @@
   margin-top: 1.2rem;
   font-size: 1.6rem;
 }
+.tooltip a {
+  text-decoration: none;
+  color: var(--site-accent);
+  font-weight: 600;
+}
+.tooltip a:hover {
+  text-decoration: underline;
+}
 /* Media Queries */
 @media (max-width: 600px) {
   .comparator-inputs {
     display: block;
     margin: 1.2rem 0;
+  }
+  .comparator-heading {
+    margin-top: 1.6rem;
   }
 }

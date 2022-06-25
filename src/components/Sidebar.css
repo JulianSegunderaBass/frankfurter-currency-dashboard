@@ -4,6 +4,7 @@
   height: 100vh;
   color: #fff;
   position: fixed;
+  transition: all 0.2s;
 }
 .sidebar-content {
   /* position: fixed; */

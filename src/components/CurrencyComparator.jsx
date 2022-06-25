@@ -29,7 +29,7 @@ export default function CurrencyComparator() {
         </select> 
       </div>
       to other currencies</div>
-      <p className='tooltip'>Select currencies from the list to compare.</p>
+      <p className='tooltip'>Built with the <a href='https://www.frankfurter.app/' target='_blank'>Frankfurter currency API</a>. Select currencies from the list to compare.</p>
     </div>
   )
 }

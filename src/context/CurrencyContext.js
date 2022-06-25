@@ -32,6 +32,7 @@ export const CurrencyContextProvider = ({ children }) => {
     currencyComparator: null,
     comparatorAmount: 1,
     chosenCurrencies: [],
+    currencyListLimit: 10,
     dataLoading: false,
     siteError: null
   });

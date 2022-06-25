@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useCurrencyContext } from '../hooks/useCurrencyContext';
 
 export default function CurrencyLabel({ shortLabel, fullLabel }) {
-  const { dispatch, chosenCurrencies, currencyComparator } = useCurrencyContext();
+  const { dispatch, chosenCurrencies, currencyComparator, currencyListLimit } = useCurrencyContext();
   const [choiceValid, setChoiceValid] = useState(null);
   
   const handleCurrencyChoice = () => {
@@ -11,8 +11,8 @@ export default function CurrencyLabel({ shortLabel, fullLabel }) {
     // Prevent user from including same currency comparator in the currency list
     if (!chosenCurrencies.includes(shortLabel) && currencyComparator !== shortLabel) {
       // Limit to 10 currencies at a time
-      if (chosenCurrencies.length >= 10) {
-        dispatch({ type: 'SET_SITE_ERROR', payload: 'Too many selections: please limit to 10 currencies at a time.' });
+      if (chosenCurrencies.length >= currencyListLimit) {
+        dispatch({ type: 'SET_SITE_ERROR', payload: `Too many selections: please limit to ${currencyListLimit} currencies at a time.` });
         setChoiceValid(false);
         setTimeout(() => {
           setChoiceValid(null);

@@ -5,10 +5,8 @@
   color: #fff;
   position: fixed;
   transition: all 0.2s;
-}
-.sidebar-content {
-  /* position: fixed; */
-  width: inherit;
+  display: flex;
+  flex-direction: column;
 }
 .site-brand {
   text-align: center;
@@ -35,13 +33,12 @@
 }
 .currency-labels {
   background: var(--light-site-accent);
-  height: 70vh;
   font-size: 1.2rem;
   overflow-y: scroll;
 }
 .currency-labels ul {
   list-style: none;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
 }
 .sidebar-toggle {
   display: none;
@@ -68,7 +65,6 @@
     transform: translateY(100%);
   }
   .currency-labels {
-    height: 30vh;
     font-size: 2rem;
   }
   .sidebar.open {
@@ -113,6 +109,17 @@
 @media (max-width: 400px) {
   .site-brand .component-heading {
     font-size: 1.6rem;
+  }
+  .site-brand {
+    margin: 0.8rem 0;
+  }
+  .site-brand svg {
+    width: 4.8rem;
+    height: 4.6rem;
+    margin: 0;
+    stroke: #fff;
+    fill: #fff;
+    padding: 0.6rem;
   }
 }
 /* Animations */

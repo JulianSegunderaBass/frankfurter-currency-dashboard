@@ -19,6 +19,15 @@
 .comparator-value {
   width: 16rem;
 }
+.comparator-value:focus,
+.comparator-select:focus {
+  outline-color: var(--site-accent);
+}
+.inline-btn {
+  padding: 0.4rem 0.8rem;
+  margin-left: 1.2rem;
+  font-size: 2.4rem;
+}
 .tooltip {
   margin-top: 1.2rem;
   font-size: 1.6rem;

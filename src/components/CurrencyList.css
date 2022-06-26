@@ -12,17 +12,6 @@
 }
 .clear-btn {
   margin-top: 2.4rem;
-  font-size: 1.4rem;
-  font-weight: 600;
-  background: transparent;
-  border: 1px solid var(--site-accent);
-  color: var(--site-accent);
-  padding: 0.8rem 1.2rem;
-  cursor: pointer;
-}
-.clear-btn:hover {
-  background: var(--site-accent);
-  color: #fff;
 }
 /* Media Queries */
 @media (max-width: 700px) {
